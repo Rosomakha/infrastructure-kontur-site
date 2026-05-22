@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { InfrastructureContourLogo } from "@/components/infrastructure-contour-logo";
+import { BrandLogo } from "@/components/brand-logo";
 
 const navItems = [
   { href: "/uslugi", label: "Услуги" },
@@ -32,7 +32,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <InfrastructureContourLogo tagline="" markSize={42} />
+        <BrandLogo tagline="" markSize={40} />
 
         <nav className="nav-desktop" aria-label="Главное меню">
           <ul className="nav-list">

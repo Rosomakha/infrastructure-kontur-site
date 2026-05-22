@@ -4,14 +4,15 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 const SITE_URL = "https://trastenergy-site.vercel.app";
-const SITE_NAME = "Инфраструктурный контур";
+const SITE_NAME = "Новиков и партнёры";
+const LEGAL_NAME = "ООО «Инфраструктурный контур»";
 const SITE_DESCRIPTION =
-  "Независимый консалтинг по инженерной инфраструктуре: аудит, технологическое присоединение и сопровождение согласований по воде, стокам, газу, теплу и электроснабжению в Москве и Московской области.";
+  "Независимый консалтинг по инженерной инфраструктуре: аудит, технологическое присоединение и сопровождение согласований по воде, стокам, газу, теплу и электроснабжению в Москве и Московской области. На стороне заказчика — с личным участием партнёра.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
+    default: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
     template: `%s — ${SITE_NAME}`
   },
   description: SITE_DESCRIPTION,
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
+    title: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
+    title: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   robots: {
@@ -37,8 +38,9 @@ export const metadata: Metadata = {
 
 const orgJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   name: SITE_NAME,
+  legalName: LEGAL_NAME,
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   areaServed: [
