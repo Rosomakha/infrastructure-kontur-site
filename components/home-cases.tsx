@@ -51,11 +51,12 @@ export function HomeCases() {
   return (
     <section className="section cases-section" aria-labelledby="cases-heading">
       <div className="container">
-        <p className="eyebrow">Реализованные проекты</p>
-        <h2 id="cases-heading">Что мы делаем на практике</h2>
+        <p className="eyebrow">Направления и объекты</p>
+        <h2 id="cases-heading">Что и где мы сопровождали</h2>
         <p className="lead cases-lead">
-          Подключения, наружные сети, согласования и СМР на объектах в Москве и
-          Московской области. Готовы подробно рассказать про любой из направлений.
+          Объекты и направления, где вели аудит, согласования и техническое
+          сопровождение в Москве и Московской области. По любому из них готовы
+          разобрать кейс детальнее.
         </p>
         <div className="cases-grid">
           {cases.map((c, i) => (
@@ -81,7 +82,7 @@ export function HomeCases() {
             Обсудить ваш объект
           </Link>
           <Link href="/uslugi" className="btn btn-ghost">
-            Смотреть услуги
+            Все направления
           </Link>
         </div>
       </div>

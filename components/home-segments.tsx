@@ -26,9 +26,9 @@ const Icon = ({ children }: { children: React.ReactNode }) => (
 
 const segments: Segment[] = [
   {
-    title: "Девелоперам и застройщикам",
+    title: "Инвесторам и девелоперам",
     description:
-      "Жилые комплексы и коммерческие проекты: сетевые ТУ, проект ВЭС/ВНС, ввод объекта.",
+      "Жилые и коммерческие проекты: аудит ТУ, дорожная карта согласований, контроль сетевого подрядчика и защита бюджета инфраструктуры.",
     href: "/uslugi/tehprisoedinenie",
     icon: (
       <Icon>
@@ -41,7 +41,7 @@ const segments: Segment[] = [
   {
     title: "Промышленности и логистике",
     description:
-      "Заводы, склады, технопарки: повышение мощности, тепло и водоснабжение, наружные сети.",
+      "Заводы, склады, технопарки: повышение мощности, экспертиза договоров с РСО, навигация по техусловиям и согласованиям.",
     href: "/uslugi/tehprisoedinenie-elektrosnabzhenie",
     icon: (
       <Icon>
@@ -54,7 +54,7 @@ const segments: Segment[] = [
   {
     title: "Управляющим компаниям и ТСЖ",
     description:
-      "Договоры с РСО, ОДПУ/ИПУ, модернизация ИТП, энергоаудит МКД и сметы по 261-ФЗ.",
+      "Аудит договоров с РСО, проверка расчётов ОДН, узлов учёта и тарифных решений. Защита интересов МКД при модернизации.",
     href: "/uslugi/dogovory-rso",
     icon: (
       <Icon>
@@ -64,9 +64,9 @@ const segments: Segment[] = [
     )
   },
   {
-    title: "Частным владельцам",
+    title: "Собственникам помещений",
     description:
-      "Перепланировка и переустройство помещений в Москве и МО: проект и согласование.",
+      "Сопровождение перепланировки и переустройства в Москве и МО: проектные решения и прохождение Мосжилинспекции.",
     href: "/uslugi/pereplanirovka",
     icon: (
       <Icon>
@@ -84,7 +84,11 @@ export function HomeSegments() {
     <section className="section segments-section" aria-labelledby="segments-heading">
       <div className="container">
         <p className="eyebrow">Кому подходит</p>
-        <h2 id="segments-heading">Решения под профиль заказчика</h2>
+        <h2 id="segments-heading">С кем мы работаем</h2>
+        <p className="lead segments-lead">
+          Подбираем формат сопровождения под профиль заказчика: от короткого
+          аудита до ведения проекта от ТУ до акта.
+        </p>
         <div className="segments-grid">
           {segments.map((s) => (
             <Link key={s.href} href={s.href} className="segment-card">

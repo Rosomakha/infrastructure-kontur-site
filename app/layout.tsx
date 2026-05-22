@@ -6,12 +6,12 @@ import { SiteFooter } from "@/components/site-footer";
 const SITE_URL = "https://trastenergy-site.vercel.app";
 const SITE_NAME = "Инфраструктурный контур";
 const SITE_DESCRIPTION =
-  "Проектирование, технологическое присоединение и сопровождение согласований по воде, стокам, газу, теплу и электроснабжению в Москве и Московской области.";
+  "Независимый консалтинг по инженерной инфраструктуре: аудит, технологическое присоединение и сопровождение согласований по воде, стокам, газу, теплу и электроснабжению в Москве и Московской области.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — инженерная инфраструктура и согласования`,
+    default: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
     template: `%s — ${SITE_NAME}`
   },
   description: SITE_DESCRIPTION,
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — инженерная инфраструктура под ключ`,
+    title: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — инженерная инфраструктура под ключ`,
+    title: `${SITE_NAME} — консалтинг по инженерной инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   robots: {
