@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { InfrastructureContourLogo } from "@/components/infrastructure-contour-logo";
 
 const navItems = [
@@ -11,22 +15,80 @@ const navItems = [
 ];
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="site-header">
       <div className="container header-inner">
         <InfrastructureContourLogo tagline="" markSize={42} />
-        <nav aria-label="Главное меню">
+
+        <nav className="nav-desktop" aria-label="Главное меню">
           <ul className="nav-list">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
+                <Link
+                  href={item.href}
+                  className={pathname === item.href ? "is-active" : undefined}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
+
         <a className="header-phone" href="tel:+74950000000">
           +7 (495) 000-00-00
         </a>
+
+        <button
+          type="button"
+          className={`burger ${open ? "is-open" : ""}`}
+          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${open ? "is-open" : ""}`}
+        aria-hidden={!open}
+      >
+        <ul>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={pathname === item.href ? "is-active" : undefined}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <a className="mobile-phone" href="tel:+74950000000">
+              +7 (495) 000-00-00
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
   );

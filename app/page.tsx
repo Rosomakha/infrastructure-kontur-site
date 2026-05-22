@@ -1,18 +1,18 @@
 import Link from "next/link";
-import {
-  DraftingHeroWatermark,
-  DraftingToolsStrip
-} from "@/components/drafting-tools-decoration";
+import { HomeSegments } from "@/components/home-segments";
+import { HomeCases } from "@/components/home-cases";
 
-const services = [
-  "Технологическое присоединение к электрическим, водопроводным, канализационным, тепловым и газовым сетям",
-  "Инженерное проектирование и техническая документация",
-  "Строительство объектов энергетики и инженерной инфраструктуры",
-  "Сопровождение согласований в органах власти и ресурсоснабжающих организациях",
-  "Экология: материалы ОВОС, государственная экологическая экспертиза и смежные вопросы — по применимости к объекту",
-  "Перепланировка и переустройство жилых и нежилых помещений",
-  "Договоры с РСО после техприсоединения, ОДПУ и ИПУ в МКД",
-  "Модернизация ИТП и энергоаудит зданий"
+const heroBadges = [
+  { label: "Под ключ", note: "проект, согласование, СМР, ввод" },
+  { label: "Москва и МО", note: "знаем регламенты РСО" },
+  { label: "Ответ за 1 день", note: "по любой заявке" }
+];
+
+const stats = [
+  { value: "5+", label: "лет в инженерной отрасли" },
+  { value: "60+", label: "согласованных подключений" },
+  { value: "5", label: "направлений сетей и услуг" },
+  { value: "24 ч", label: "первая обратная связь" }
 ];
 
 const advantages = [
@@ -26,32 +26,7 @@ const advantages = [
   },
   {
     title: "Прозрачные сроки",
-    text: "Работаем по дорожной карте этапов и еженедельной отчетности для заказчика."
-  }
-];
-
-const homeQuickLinks = [
-  { href: "/uslugi", label: "Услуги и документы" },
-  { href: "/uslugi/ekologiya-i-ovos", label: "Экология и ОВОС" },
-  { href: "/kalkulyatory", label: "Калькуляторы сетей" },
-  { href: "/normativnaya-baza", label: "Нормативы" },
-  { href: "/otrasli", label: "Отрасли" },
-  { href: "/o-kompanii", label: "О компании" },
-  { href: "/kontakty", label: "Контакты" }
-];
-
-const homeTrust = [
-  {
-    title: "Ответ по заявке",
-    text: "Первая обратная связь по запросу на расчёт или консультацию — в течение одного рабочего дня."
-  },
-  {
-    title: "Договорная работа",
-    text: "Фиксируем объём и этапы в договоре: проектирование, согласования, СМР и передача документации."
-  },
-  {
-    title: "География",
-    text: "Основной фокус — Москва и Московская область; разбираем интересующие вас объекты индивидуально."
+    text: "Работаем по дорожной карте этапов и еженедельной отчётности для заказчика."
   }
 ];
 
@@ -77,106 +52,58 @@ const homeFaq = [
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
+      <section className="hero hero-v2">
+        <div className="container hero-v2-inner">
+          <div className="hero-v2-copy">
             <p className="eyebrow">Инфраструктурный контур</p>
-            <h1>Проектируем, согласовываем, строим и подключаем инженерные сети</h1>
+            <h1>
+              Инженерная инфраструктура{" "}
+              <span className="hero-accent">под ключ</span>
+            </h1>
             <p className="lead">
-              Инженерно-строительный партнер полного цикла в Москве и Московской
-              области: вода, водоотведение, газ, тепло и электроснабжение — с
-              акцентом на документацию и управляемые сроки.
+              Проектируем, согласовываем, строим и подключаем сети: электричество,
+              вода, водоотведение, газ и тепло. Москва и Московская область — от
+              бумажной работы до запуска объекта.
             </p>
             <div className="hero-actions">
               <Link href="/kontakty" className="btn btn-primary">
-                Получить консультацию
+                Запросить расчёт
               </Link>
               <Link href="/uslugi" className="btn btn-ghost">
-                Смотреть услуги
+                Услуги и чек-листы
               </Link>
             </div>
+            <ul className="hero-badges" aria-label="Ключевые преимущества">
+              {heroBadges.map((b) => (
+                <li key={b.label}>
+                  <strong>{b.label}</strong>
+                  <span>{b.note}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <aside className="hero-aside">
-            <div className="hero-aside-inner">
-              <DraftingHeroWatermark className="hero-drafting-watermark" />
-              <div className="panel">
-                <h2>Направления</h2>
-                <ul className="check-list">
-                  {services.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+
+          <aside className="hero-v2-stats" aria-label="Цифры компании">
+            <div className="hero-stats-card">
+              <h2>В цифрах</h2>
+              <ul className="hero-stats-list">
+                {stats.map((s) => (
+                  <li key={s.label}>
+                    <span className="stat-value">{s.value}</span>
+                    <span className="stat-label">{s.label}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="hero-stats-note">
+                Расчёт и КП по объекту — в течение одного рабочего дня после
+                получения исходных данных.
+              </p>
             </div>
           </aside>
         </div>
       </section>
 
-      <DraftingToolsStrip />
-
-      <section className="home-quick section-drafting-deco" aria-labelledby="home-quick-heading">
-        <div className="container">
-          <h2 id="home-quick-heading">Куда перейти на сайте</h2>
-          <nav className="home-quick-links" aria-label="Быстрые разделы">
-            {homeQuickLinks.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </section>
-
-      <section className="section section-drafting-deco">
-        <div className="container">
-          <h2>Справка для заказчика</h2>
-          <p className="lead" style={{ marginBottom: "1rem" }}>
-            Чек-листы документов для просчёта по направлению, ссылки на
-            калькуляторы сетей и ориентиры по нормам.
-          </p>
-          <div className="cards-3" style={{ marginBottom: "0.5rem" }}>
-            <article className="card">
-              <h3 className="card-title" style={{ fontSize: "1.05rem" }}>
-                Услуги и документы
-              </h3>
-              <p className="muted" style={{ margin: "0 0 0.75rem" }}>
-                Какие исходные данные обычно нужны для коммерческого предложения
-                и оценки сроков.
-              </p>
-              <Link href="/uslugi" className="text-link" style={{ fontWeight: 600 }}>
-                Перейти к услугам →
-              </Link>
-            </article>
-            <article className="card">
-              <h3 className="card-title" style={{ fontSize: "1.05rem" }}>
-                Калькуляторы
-              </h3>
-              <p className="muted" style={{ margin: "0 0 0.75rem" }}>
-                Официальные порталы РСО: электричество, тепло, вода, газ (Москва, МО, федеральный уровень).
-              </p>
-              <Link href="/kalkulyatory" className="text-link" style={{ fontWeight: 600 }}>
-                Открыть подборку →
-              </Link>
-            </article>
-            <article className="card">
-              <h3 className="card-title" style={{ fontSize: "1.05rem" }}>
-                Нормативы
-              </h3>
-              <p className="muted" style={{ margin: "0 0 0.75rem" }}>
-                ФЗ, ПП РФ и отраслевые ориентиры; не заменяют соглашения с
-                сетями.
-              </p>
-              <Link
-                href="/normativnaya-baza"
-                className="text-link"
-                style={{ fontWeight: 600 }}
-              >
-                Нормативная база →
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
+      <HomeSegments />
 
       <section className="section section-alt">
         <div className="container">
@@ -192,19 +119,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section home-trust section-drafting-deco" aria-labelledby="home-trust-heading">
-        <div className="container">
-          <h2 id="home-trust-heading">Что важно при старте проекта</h2>
-          <div className="home-trust-inner">
-            {homeTrust.map((item) => (
-              <div key={item.title}>
-                <strong>{item.title}</strong>
-                <p>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeCases />
 
       <section className="section">
         <div className="container">
@@ -236,18 +151,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section cta">
-        <div className="container cta-inner">
+      <section className="cta-strip">
+        <div className="container cta-strip-inner">
           <div>
-            <h2>Нужен просчет проекта?</h2>
+            <p className="eyebrow eyebrow-light">1 шаг до старта</p>
+            <h2>Расскажите о проекте — пришлём бриф и оценку</h2>
             <p>
-              Подготовим предварительную дорожную карту и коммерческое предложение
-              под ваш объект в течение 1 рабочего дня.
+              Возьмём ваш объект в работу: подберём дорожную карту, оценим сроки
+              и стоимость по этапам. Без обязательств.
             </p>
           </div>
-          <Link href="/kontakty" className="btn btn-primary">
-            Оставить заявку
-          </Link>
+          <div className="cta-strip-actions">
+            <Link href="/kontakty" className="btn btn-primary btn-light">
+              Оставить заявку
+            </Link>
+            <a href="tel:+74950000000" className="btn btn-ghost btn-light">
+              +7 (495) 000-00-00
+            </a>
+          </div>
         </div>
       </section>
     </>
