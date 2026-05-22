@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  DEFAULT_SERVICE_TIMELINE_DISCLAIMER,
   getServiceBySlug,
   services,
   tehprisoedinenieCardLinks,
@@ -131,9 +130,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </tbody>
               </table>
             </div>
-            <p className="timeline-disclaimer muted">
-              {s.timelineDisclaimer ?? DEFAULT_SERVICE_TIMELINE_DISCLAIMER}
-            </p>
           </div>
         )}
 

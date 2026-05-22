@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { HomeSegments } from "@/components/home-segments";
-import { HomeCases } from "@/components/home-cases";
 
 const heroBadges = [
   { label: "Независимая экспертиза", note: "на стороне заказчика, не РСО" },
@@ -143,8 +142,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <HomeCases />
 
       <section className="section approach-section">
         <div className="container">
