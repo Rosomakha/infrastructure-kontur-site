@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label=""@0AB-=5@468  7=0:">
+  <title>Flow Crest</title>
+  <defs>
+    <linearGradient id="teShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3A6E"/>
+      <stop offset="100%" stop-color="#0E7C86"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M60 6l42 14v31c0 30-17 50-42 63C35 101 18 81 18 51V20L60 6z"
+    fill="url(#teShieldGrad)"
+  />
+  <path
+    d="M60 20c20 0 32 7 32 7v24c0 23-13 39-32 50-19-11-32-27-32-50V27s12-7 32-7z"
+    fill="none"
+    stroke="#D9961A"
+    stroke-width="2.5"
+  />
+  <path
+    d="M40 43h40M40 55h40M40 67h40"
+    stroke="#E5E7EB"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <circle cx="40" cy="43" r="3.5" fill="#D9961A"/>
+  <circle cx="80" cy="43" r="3.5" fill="#D9961A"/>
+  <circle cx="40" cy="55" r="3.5" fill="#D9961A"/>
+  <circle cx="80" cy="55" r="3.5" fill="#D9961A"/>
+  <circle cx="40" cy="67" r="3.5" fill="#D9961A"/>
+  <circle cx="80" cy="67" r="3.5" fill="#D9961A"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <title>Infrastructure contour mark � drafting compass</title>
+  <defs>
+    <linearGradient id="ik-gold-rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5ebd4"/>
+      <stop offset="0.4" stop-color="#d1a84a"/>
+      <stop offset="1" stop-color="#7a5a24"/>
+    </linearGradient>
+    <clipPath id="ik-shield-clip-mark">
+      <path d="M24 5 C32 5 39 9 41 17 L41 29 C41 36 34 41 24 43 C14 41 7 36 7 29 L7 17 C9 9 16 5 24 5 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ik-shield-clip-mark)">
+    <path fill="#0b3a6e" d="M24 5 C32 5 39 9 41 17 L41 29 C41 36 34 41 24 43 C14 41 7 36 7 29 L7 17 C9 9 16 5 24 5 Z"/>
+    <!-- ???? ?????????? (??? ????????? ???????) -->
+    <path
+      fill="none"
+      stroke="#a67c32"
+      stroke-width="2.35"
+      stroke-linecap="round"
+      d="M 11.5 30.5 Q 24 11 36.5 30.5"
+    />
+    <path
+      fill="none"
+      stroke="#f7f3ea"
+      stroke-width="1.05"
+      stroke-linecap="round"
+      d="M 11.5 30.5 Q 24 11 36.5 30.5"
+    />
+    <!-- ????? -->
+    <path
+      fill="none"
+      stroke="#a67c32"
+      stroke-width="3.65"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M 24 18.2 L 10.2 37.2"
+    />
+    <path
+      fill="none"
+      stroke="#f7f3ea"
+      stroke-width="1.7"
+      stroke-linecap="round"
+      d="M 24 18.2 L 10.2 37.2"
+    />
+    <path
+      fill="none"
+      stroke="#a67c32"
+      stroke-width="3.65"
+      stroke-linecap="round"
+      d="M 24 18.2 L 37.8 37.2"
+    />
+    <path
+      fill="none"
+      stroke="#f7f3ea"
+      stroke-width="1.7"
+      stroke-linecap="round"
+      d="M 24 18.2 L 37.8 37.2"
+    />
+    <!-- ?????? -->
+    <circle cx="24" cy="17.8" r="4.2" stroke="#a67c32" stroke-width="1.35" fill="#f7f3ea"/>
+    <circle cx="24" cy="17.8" r="1.35" fill="#a67c32"/>
+  </g>
+  <path
+    fill="none"
+    stroke="url(#ik-gold-rim)"
+    stroke-width="0.9"
+    d="M24 5 C32 5 39 9 41 17 L41 29 C41 36 34 41 24 43 C14 41 7 36 7 29 L7 17 C9 9 16 5 24 5 Z"
+  />
+</svg>
