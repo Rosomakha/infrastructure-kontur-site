@@ -5,7 +5,6 @@ import { SiteFooter } from "@/components/site-footer";
 
 const SITE_URL = "https://trastenergy-site.vercel.app";
 const SITE_NAME = "Контур согласований";
-const LEGAL_NAME = "ООО «Инфраструктурный контур»";
 const SITE_DESCRIPTION =
   "Контур согласований — консалтинговая практика по согласованиям в строительстве, ЖКХ и инженерной инфраструктуре. Технологическое присоединение, нормативно-правовая экспертиза, сопровождение в государственных органах и работа с ресурсоснабжающими организациями. Москва и Московская область.";
 
@@ -40,7 +39,6 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: SITE_NAME,
-  legalName: LEGAL_NAME,
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   areaServed: [
