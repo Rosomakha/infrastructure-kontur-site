@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_MOTTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "О компании и руководителе",
@@ -12,6 +13,7 @@ export default function AboutPage() {
       <div className="container prose">
         <p className="eyebrow">О компании</p>
         <h1>Контур согласований</h1>
+        <p className="site-motto">{SITE_MOTTO}</p>
         <p className="lead">
           Консалтинговая практика по согласованиям в строительстве, ЖКХ и
           инженерной инфраструктуре. Помогаем девелоперам, инвесторам,

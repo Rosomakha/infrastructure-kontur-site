@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HomeSegments } from "@/components/home-segments";
+import { SITE_MOTTO } from "@/lib/site";
 
 const heroBadges = [
   {
@@ -102,6 +103,7 @@ export default function HomePage() {
               Согласования в строительстве, ЖКХ и{" "}
               <span className="hero-accent">инфраструктуре</span>
             </h1>
+            <p className="hero-motto">{SITE_MOTTO}</p>
             <p className="lead">
               Сопровождаем девелоперов, инвесторов и эксплуатирующие
               организации в работе с государственными органами,

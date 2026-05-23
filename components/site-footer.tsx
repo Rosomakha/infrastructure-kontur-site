@@ -1,12 +1,15 @@
+import { SITE_MOTTO, SITE_TAGLINE } from "@/lib/site";
+
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <section>
           <h3>Контур согласований</h3>
+          <p className="site-motto">{SITE_MOTTO}</p>
           <p>
-            Консалтинговая практика по согласованиям в строительстве, ЖКХ и
-            инженерной инфраструктуре. Москва и Московская область.
+            Консалтинговая практика: {SITE_TAGLINE.toLowerCase()}. Москва и
+            Московская область.
           </p>
         </section>
         <section>

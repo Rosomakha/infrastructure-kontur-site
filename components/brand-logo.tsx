@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_TAGLINE } from "@/lib/site";
 
 type BrandLogoProps = {
   linkToHome?: boolean;
@@ -75,7 +76,7 @@ export function BrandMark({
 export function BrandLogo({
   linkToHome = true,
   className,
-  tagline = "Согласования в строительстве, ЖКХ и инфраструктуре",
+  tagline = SITE_TAGLINE,
   markSize = 44
 }: BrandLogoProps) {
   const inner = (
