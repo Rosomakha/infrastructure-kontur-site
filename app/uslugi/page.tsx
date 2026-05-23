@@ -95,12 +95,18 @@ export default function ServicesPage() {
                 Документы: {s.docGroups.length}{" "}
                 {pluralGroup(s.docGroups.length)}
               </p>
-              <div className="card-actions">
+            <div className="card-actions card-actions-split">
                 <Link
                   className="btn btn-primary btn-block"
                   href={`/uslugi/${s.slug}`}
                 >
                   Подробно и чек-лист
+                </Link>
+                <Link
+                  className="btn btn-secondary btn-block"
+                  href={`/kontakty?usluga=${encodeURIComponent(s.slug)}`}
+                >
+                  Заявка
                 </Link>
               </div>
             </article>
@@ -110,7 +116,7 @@ export default function ServicesPage() {
         <h2 className="uslugi-h2 uslugi-h2-spaced">Государственная поддержка и GR</h2>
         <p className="muted section-blurb">
           Каталог федеральных программ (ФРТ, МКИ, КРТ, ФКГС, переселение,
-          газификация и др.) с НПА и универсальным чек-листом для первичного
+          газификация и др.) с НПА и индивидуальными чек-листами по каждой программе для первичного
           брифа — на странице услуги.
         </p>
         <article className="card uslugi-hub">
@@ -120,12 +126,18 @@ export default function ServicesPage() {
             Документы: {federalSupport.docGroups.length}{" "}
             {pluralGroup(federalSupport.docGroups.length)}
           </p>
-          <div className="card-actions">
+          <div className="card-actions card-actions-split">
             <Link
               className="btn btn-primary btn-block"
               href={`/uslugi/${federalSupport.slug}`}
             >
               Подробно и чек-лист
+            </Link>
+            <Link
+              className="btn btn-secondary btn-block"
+              href={`/kontakty?usluga=${encodeURIComponent(federalSupport.slug)}`}
+            >
+              Заявка
             </Link>
           </div>
         </article>
@@ -139,12 +151,18 @@ export default function ServicesPage() {
               <p className="muted small-margin">
                 Документы: {s.docGroups.length} {pluralGroup(s.docGroups.length)}
               </p>
-              <div className="card-actions">
+            <div className="card-actions card-actions-split">
                 <Link
                   className="btn btn-primary btn-block"
                   href={`/uslugi/${s.slug}`}
                 >
                   Подробно и чек-лист
+                </Link>
+                <Link
+                  className="btn btn-secondary btn-block"
+                  href={`/kontakty?usluga=${encodeURIComponent(s.slug)}`}
+                >
+                  Заявка
                 </Link>
               </div>
             </article>

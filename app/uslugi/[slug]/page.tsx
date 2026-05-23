@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FederalSupportSection } from "@/components/federal-support-section";
 import { TehprisSavingsSection } from "@/components/tehpris-savings-section";
+import { getLegalSectionsByIds } from "@/lib/data/legal-base";
 import {
   getServiceBySlug,
   services,
@@ -66,6 +67,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const tehprisResource = getTehprisResource(slug);
   const showTehprisSavings = tehprisResource !== undefined;
   const showFederalSupport = slug === "podderzhka-federalnogo-byudzheta";
+  const legalSectionsForService = getLegalSectionsByIds(s.legalSectionIds ?? []);
 
   return (
     <section className="section">
@@ -117,6 +119,47 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           />
         )}
 
+        <h2>Чем занимаемся</h2>
+        <ul className="check-list">
+          {s.scope.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+
+        <h2 id="chek-list">Индивидуальный чек-лист документов</h2>
+        <p className="muted">{s.introDocs}</p>
+
+        {legalSectionsForService.length > 0 && (
+          <div className="service-legal-refs">
+            <h3>Нормативная база услуги</h3>
+            <p className="muted small-margin">
+              Чек-лист составлен с учётом требований следующих групп актов. Полный
+              перечень и ссылки — на{" "}
+              <Link href="/normativnaya-baza">странице нормативной базы</Link>.
+            </p>
+            <ul className="inline-links">
+              {legalSectionsForService.map((section) => (
+                <li key={section.id}>
+                  <Link href={`/normativnaya-baza#${section.id}`}>
+                    {section.heading}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {s.docGroups.map((group) => (
+          <div className="doc-block" key={group.title}>
+            <h3>{group.title}</h3>
+            <ul className="check-list">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
         {showFederalSupport && <FederalSupportSection />}
 
         {(s.algorithmSteps?.length ?? 0) > 0 && (
@@ -160,27 +203,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        <h2>Чем занимаемся</h2>
-        <ul className="check-list">
-          {s.scope.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
-
-        <h2>Документы для предварительного расчёта стоимости</h2>
-        <p className="muted">{s.introDocs}</p>
-
-        {s.docGroups.map((group) => (
-          <div className="doc-block" key={group.title}>
-            <h3>{group.title}</h3>
-            <ul className="check-list">
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-
         {s.helpfulLinks && s.helpfulLinks.length > 0 && (
           <>
             <h2>Дополнительно на сайте</h2>
@@ -196,13 +218,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
         <div className="doc-cta">
           <p>
-            Пришлите данные в свободной форме на{" "}
-            <a href="mailto:olegnovikov.gov@yandex.ru">olegnovikov.gov@yandex.ru</a> или
-            оставьте заявку — подготовим бриф и уточним список под вашу
-            ситуацию.
+            Пришлите данные через форму заявки — сначала заполните чек-лист по
+            этой услуге, затем контакты. Или напишите на{" "}
+            <a href="mailto:olegnovikov.gov@yandex.ru">olegnovikov.gov@yandex.ru</a>.
           </p>
-          <Link className="btn btn-primary" href="/kontakty">
-            Запросить расчёт
+          <Link
+            className="btn btn-primary"
+            href={`/kontakty?usluga=${encodeURIComponent(s.slug)}`}
+          >
+            Заполнить чек-лист и оставить заявку
           </Link>
         </div>
       </div>

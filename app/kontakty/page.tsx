@@ -1,4 +1,19 @@
-export default function ContactsPage() {
+import { ServiceRequestWizard } from "@/components/service-request-wizard";
+import type { Metadata } from "next";
+
+type PageProps = {
+  searchParams: Promise<{ usluga?: string }>;
+};
+
+export const metadata: Metadata = {
+  title: "Контакты и заявка — Контур согласований",
+  description:
+    "Оставить заявку на сопровождение: сначала чек-лист документов по услуге, затем контакты. Москва и Московская область."
+};
+
+export default async function ContactsPage({ searchParams }: PageProps) {
+  const { usluga } = await searchParams;
+
   return (
     <section className="section">
       <div className="container contact-grid">
@@ -6,8 +21,8 @@ export default function ContactsPage() {
           <p className="eyebrow">Контакты</p>
           <h1>Свяжитесь с руководителем</h1>
           <p className="lead">
-            Подготовим дорожную карту и предварительную оценку по вашему
-            объекту. На входе вы общаетесь напрямую с руководителем практики.
+            Перед отправкой заявки заполните чек-лист по нужной услуге — так мы
+            быстрее оценим объём работ и перечень недостающих документов.
           </p>
           <ul className="contact-list">
             <li>Бренд: Контур согласований</li>
@@ -25,33 +40,7 @@ export default function ContactsPage() {
             <li>Регион: Москва и Московская область</li>
           </ul>
         </div>
-        <form className="panel form" action="#" method="post">
-          <h2>Оставить заявку</h2>
-          <label>
-            Имя
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Телефон
-            <input type="tel" name="phone" required />
-          </label>
-          <label>
-            Тип объекта
-            <select name="objectType" defaultValue="Коммерческий">
-              <option>Коммерческий</option>
-              <option>Жилой</option>
-              <option>Промышленный</option>
-              <option>Инфраструктурный</option>
-            </select>
-          </label>
-          <label>
-            Комментарий
-            <textarea name="message" rows={4} />
-          </label>
-          <button type="submit" className="btn btn-primary">
-            Отправить заявку
-          </button>
-        </form>
+        <ServiceRequestWizard initialServiceSlug={usluga} />
       </div>
     </section>
   );

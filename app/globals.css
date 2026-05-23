@@ -414,6 +414,17 @@ h3 {
   box-shadow: 0 0 0 1px rgba(166, 124, 50, 0.45);
 }
 
+.btn-secondary {
+  background: var(--surface);
+  color: var(--primary);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--primary);
+}
+
 .btn-ghost {
   border-color: rgba(11, 58, 110, 0.2);
   background: rgba(255, 255, 255, 0.7);
@@ -561,6 +572,125 @@ h3 {
   padding: 0 0 0.5rem;
   border-left: 3px solid var(--accent);
   padding-left: 1rem;
+}
+
+.service-legal-refs {
+  margin: 1.25rem 0 1.75rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.service-legal-refs h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.request-wizard {
+  gap: 1rem;
+}
+
+.request-wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.request-wizard-steps .active {
+  color: var(--primary);
+}
+
+.request-wizard-steps .done {
+  color: var(--gold);
+}
+
+.request-wizard-pane {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.request-wizard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.request-checklist {
+  max-height: min(52vh, 520px);
+  overflow: auto;
+  padding-right: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.request-checklist-group {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem 0.85rem;
+  margin: 0 0 0.75rem;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.request-checklist-group legend {
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 0 0.35rem;
+}
+
+.request-checklist-items {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.request-checklist-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.request-checklist-label {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.request-checklist-row select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+  background: #fff;
+}
+
+.request-wizard-progress {
+  font-size: 0.88rem;
+}
+
+.request-wizard-done .request-wizard-preview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.78rem;
+  max-height: 280px;
+  overflow: auto;
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.request-wizard-copy-hint {
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin: 0;
 }
 
 .doc-cta {
@@ -825,6 +955,18 @@ h3 {
 
 .card-actions {
   margin-top: 0.75rem;
+}
+
+.card-actions-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .card-actions-split {
+    grid-template-columns: 1fr;
+  }
 }
 
 .btn-block {

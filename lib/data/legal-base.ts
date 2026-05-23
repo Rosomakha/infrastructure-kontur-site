@@ -296,3 +296,9 @@ export const legalSections: LegalSection[] = [
     ]
   }
 ];
+
+export function getLegalSectionsByIds(ids: string[]): LegalSection[] {
+  return ids
+    .map((id) => legalSections.find((section) => section.id === id))
+    .filter((section): section is LegalSection => section !== undefined);
+}

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import {
-  federalSupportCategories,
-  universalBriefChecklist
-} from "@/lib/data/federal-support-programs";
+import { federalSupportCategories } from "@/lib/data/federal-support-programs";
+import { getFederalProgramChecklist } from "@/lib/data/federal-program-checklists";
 
 export function FederalSupportSection() {
   return (
@@ -48,25 +46,13 @@ export function FederalSupportSection() {
         </p>
       </div>
 
-      <h2>Универсальный чек-лист для первичного брифа</h2>
-      <p className="muted">
-        Заполните по возможности все пункты — этого достаточно для первичной
-        оценки применимости программы, объёма работ и перечня недостающих
-        документов. Дополнительные поля по конкретной программе — в карточках
-        ниже.
-      </p>
-      <ul className="check-list federal-brief-list">
-        {universalBriefChecklist.map((item) => (
-          <li key={item.slice(0, 60)}>{item}</li>
-        ))}
-      </ul>
-
       <h2>Программы по направлениям</h2>
       <p className="muted">
-        С 2025 г. большинство мер реализуется в рамках нацпроекта «Инфраструктура
-        для жизни»; отдельные механизмы (бюджетные кредиты ФРТ, субсидии по
-        приложениям к ПП РФ № 1710, ФКГС, газификация) сохраняют собственные
-        регламенты отбора.
+        У каждой программы — индивидуальный чек-лист документов для первичного
+        брифа и подготовки заявки. С 2025 г. большинство мер реализуется в рамках
+        нацпроекта «Инфраструктура для жизни»; отдельные механизмы (бюджетные
+        кредиты ФРТ, субсидии по приложениям к ПП РФ № 1710, ФКГС, газификация)
+        сохраняют собственные регламенты отбора.
       </p>
 
       {federalSupportCategories.map((cat) => (
@@ -128,10 +114,15 @@ export function FederalSupportSection() {
                     ))}
                   </ul>
 
-                  <h4>Дополнительно для брифа по этой программе</h4>
-                  <ul className="check-list">
-                    {program.briefFields.map((f) => (
-                      <li key={f}>{f}</li>
+                  <h4>Индивидуальный чек-лист документов</h4>
+                  <p className="muted small-margin">
+                    Пункты сформированы с учётом ключевых НПА программы (см. блок
+                    «Ключевые НПА»); актуальные формы заявок и приложения —
+                    на pravo.gov.ru и сайте оператора.
+                  </p>
+                  <ul className="check-list federal-program-checklist">
+                    {getFederalProgramChecklist(program).map((item) => (
+                      <li key={item.slice(0, 72)}>{item}</li>
                     ))}
                   </ul>
                 </div>
