@@ -131,6 +131,10 @@ export default function ServicesPage() {
           <p>
             <strong>Калькуляторы сетей</strong> (справочно, сайты РСО) —{" "}
             <Link href="/kalkulyatory">Калькуляторы и инструменты</Link>.{" "}
+            <Link href="/uslugi/tehprisoedinenie#tehpris-economy">
+              Экономия на плате за техприс и льготы
+            </Link>
+            .{" "}
             <Link href="/normativnaya-baza">Нормативно-правовая база</Link> — к
             ПП РФ, ФЗ и отраслевым правилам.
           </p>

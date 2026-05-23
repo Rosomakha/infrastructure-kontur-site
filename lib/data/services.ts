@@ -93,6 +93,7 @@ export const services: ServiceDetail[] = [
       }
     ],
     helpfulLinks: [
+      { label: "Как сэкономить на плате за техприс", href: "/uslugi/tehprisoedinenie#tehpris-economy" },
       { label: "Калькуляторы и публичные инструменты", href: "/kalkulyatory" },
       { label: "Нормативно-правовая база", href: "/normativnaya-baza" }
     ],

@@ -27,6 +27,10 @@ export default function CalculatorsPage() {
         <p className="muted">
           Документы, которые сеть запросит для расчёта, смотрите в разделе{" "}
           <Link href="/uslugi/tehprisoedinenie">Технологическое присоединение</Link>
+          . Подсказки по экономии на официальной плате и льготам —{" "}
+          <Link href="/uslugi/tehprisoedinenie#tehpris-economy">
+            как сэкономить на техприс
+          </Link>
           . Нормы — в{" "}
           <Link href="/normativnaya-baza">нормативно-правовой базе</Link>.
         </p>

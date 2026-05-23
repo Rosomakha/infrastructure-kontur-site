@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { TehprisSavingsSection } from "@/components/tehpris-savings-section";
 import {
   getServiceBySlug,
   services,
   tehprisoedinenieCardLinks,
   tehprisoedinenieOnlyDirectionSlugs
 } from "@/lib/data/services";
+import type { TehprisResourceTag } from "@/lib/data/tehpris-savings";
 import type { Metadata } from "next";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -16,6 +18,18 @@ export function generateStaticParams() {
 
 function isTehprisoedinenieDirection(slug: string): boolean {
   return tehprisoedinenieOnlyDirectionSlugs.includes(slug);
+}
+
+const tehprisResourceBySlug: Record<string, TehprisResourceTag> = {
+  tehprisoedinenie: "все",
+  "tehprisoedinenie-elektrosnabzhenie": "электро",
+  "tehprisoedinenie-vodosnabzhenie-vodootvedenie": "вода",
+  "tehprisoedinenie-teplosnabzhenie": "тепло",
+  "tehprisoedinenie-gaz": "газ"
+};
+
+function getTehprisResource(slug: string): TehprisResourceTag | undefined {
+  return tehprisResourceBySlug[slug];
 }
 
 export async function generateMetadata({
@@ -48,6 +62,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const isDirection = isTehprisoedinenieDirection(slug);
   const showBreadcrumb = isDirection;
   const showHubGrid = s.isTehprisoedinenieHub === true;
+  const tehprisResource = getTehprisResource(slug);
+  const showTehprisSavings = tehprisResource !== undefined;
 
   return (
     <section className="section">
@@ -90,6 +106,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               ))}
             </div>
           </div>
+        )}
+
+        {showTehprisSavings && (
+          <TehprisSavingsSection
+            resource={tehprisResource === "все" ? undefined : tehprisResource}
+            compact={isDirection}
+          />
         )}
 
         {(s.algorithmSteps?.length ?? 0) > 0 && (

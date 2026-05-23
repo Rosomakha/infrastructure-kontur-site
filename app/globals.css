@@ -619,6 +619,121 @@ h3 {
   margin-top: 1.75rem;
 }
 
+.tehpris-savings {
+  margin: 2.25rem 0 2rem;
+  padding: 1.6rem 0 0;
+  border-top: 1px solid rgba(7, 26, 50, 0.08);
+  scroll-margin-top: 5.5rem;
+}
+
+.tehpris-savings-h3 {
+  margin: 1.5rem 0 0.85rem;
+  font-size: 1.12rem;
+  color: var(--navy-deep);
+  font-weight: 700;
+}
+
+.tehpris-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tehpris-tip-card {
+  background: linear-gradient(180deg, #fbfaf6 0%, #ffffff 100%);
+  border: 1px solid rgba(166, 124, 50, 0.22);
+  border-radius: 12px;
+  padding: 1rem 1.05rem 1.05rem;
+}
+
+.tehpris-tip-card h4 {
+  margin: 0 0 0.45rem;
+  font-size: 0.98rem;
+  color: var(--navy-deep);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.tehpris-tip-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.tehpris-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.tehpris-benefit {
+  border: 1px solid rgba(7, 26, 50, 0.08);
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.15rem 0.95rem;
+}
+
+.tehpris-benefit summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--navy-deep);
+  padding: 0.65rem 0;
+  list-style: none;
+}
+
+.tehpris-benefit summary::-webkit-details-marker {
+  display: none;
+}
+
+.tehpris-benefit summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.tehpris-benefit[open] summary::before {
+  content: "−";
+}
+
+.tehpris-benefit-dl {
+  margin: 0 0 0.85rem;
+  padding: 0 0 0.2rem;
+}
+
+.tehpris-benefit-dl div {
+  margin-bottom: 0.55rem;
+}
+
+.tehpris-benefit-dl dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.tehpris-benefit-dl dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.tehpris-savings-disclaimer {
+  margin-top: 1.25rem;
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+
+.tehpris-savings-links {
+  margin-top: 1rem;
+}
+
 .algorithm-steps {
   margin: 0.75rem 0 0;
   padding-left: 1.35rem;
