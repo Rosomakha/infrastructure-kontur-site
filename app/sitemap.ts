@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/data/services";
-
-const SITE_URL = "https://trastenergy-site.vercel.app";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

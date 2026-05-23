@@ -25,7 +25,8 @@ npm start
 
 ## Деплой
 
-Проект развёрнут на Vercel: https://trastenergy-site.vercel.app
+- Продакшен-домен: https://kontur-sogl.ru
+- Хостинг: Vercel (preview: https://trastenergy-site.vercel.app до подключения домена)
 
 ## Структура
 

@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-
-const SITE_URL = "https://trastenergy-site.vercel.app";
-const SITE_NAME = "Контур согласований";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 const SITE_DESCRIPTION =
   "Контур согласований — консалтинговая практика по согласованиям в строительстве, ЖКХ и инженерной инфраструктуре. Технологическое присоединение, нормативно-правовая экспертиза, сопровождение в государственных органах и работа с ресурсоснабжающими организациями. Москва и Московская область.";
 
