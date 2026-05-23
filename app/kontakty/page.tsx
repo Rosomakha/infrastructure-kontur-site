@@ -4,23 +4,25 @@ export default function ContactsPage() {
       <div className="container contact-grid">
         <div>
           <p className="eyebrow">Контакты</p>
-          <h1>Свяжитесь с партнёром</h1>
+          <h1>Свяжитесь с руководителем</h1>
           <p className="lead">
-            Подготовим дорожную карту и предварительную оценку по вашему объекту.
-            На входе вы общаетесь напрямую с партнёром компании.
+            Подготовим дорожную карту и предварительную оценку по вашему
+            объекту. На входе вы общаетесь напрямую с руководителем практики.
           </p>
           <ul className="contact-list">
-            <li>Бренд: Новиков и партнёры</li>
+            <li>Бренд: Контур согласований</li>
             <li>Юр. лицо: ООО «Инфраструктурный контур»</li>
-            <li>Партнёр: Новиков Олег Адарович</li>
+            <li>Руководитель: Новиков Олег Адарович</li>
             <li>
-              Телефон: <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+              Телефон: <a href="tel:+79997474747">+7 (999) 747-47-47</a>
             </li>
             <li>
-              Email: <a href="mailto:info@trustenergy.ru">info@trustenergy.ru</a>
+              E-mail:{" "}
+              <a href="mailto:olegnovikov.gov@yandex.ru">
+                olegnovikov.gov@yandex.ru
+              </a>
             </li>
             <li>Регион: Москва и Московская область</li>
-            <li>Офис: Московская область, г. Химки</li>
           </ul>
         </div>
         <form className="panel form" action="#" method="post">

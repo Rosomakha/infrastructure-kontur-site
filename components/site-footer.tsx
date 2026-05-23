@@ -3,11 +3,10 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <section>
-          <h3>Новиков и партнёры</h3>
+          <h3>Контур согласований</h3>
           <p>
-            Независимый консалтинг по инженерной инфраструктуре: аудит,
-            согласования и сопровождение подключений к сетям в Москве и
-            Московской области. На стороне заказчика.
+            Консалтинговая практика по согласованиям в строительстве, ЖКХ и
+            инженерной инфраструктуре. Москва и Московская область.
           </p>
         </section>
         <section>
@@ -33,9 +32,6 @@ export function SiteFooter() {
               <a href="/normativnaya-baza">Нормативно-правовая база</a>
             </li>
             <li>
-              <a href="/uslugi/ekologiya-i-ovos">Экология и ОВОС</a>
-            </li>
-            <li>
               <a href="/uslugi/dogovory-rso">Договоры с РСО</a>
             </li>
             <li>
@@ -51,10 +47,12 @@ export function SiteFooter() {
           <ul>
             <li>Москва и Московская область</li>
             <li>
-              <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+              <a href="tel:+79997474747">+7 (999) 747-47-47</a>
             </li>
             <li>
-              <a href="mailto:info@trustenergy.ru">info@trustenergy.ru</a>
+              <a href="mailto:olegnovikov.gov@yandex.ru">
+                olegnovikov.gov@yandex.ru
+              </a>
             </li>
           </ul>
         </section>

@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!s) {
     return { title: "Услуга" };
   }
-  const title = s.seoTitle ?? `${s.title} — Новиков и партнёры`;
+  const title = s.seoTitle ?? `${s.title} — Контур согласований`;
   const description = s.seoDescription ?? s.shortLead.slice(0, 180);
   return {
     title,

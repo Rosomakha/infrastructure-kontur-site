@@ -49,8 +49,8 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <a className="header-phone" href="tel:+74950000000">
-          +7 (495) 000-00-00
+        <a className="header-phone" href="tel:+79997474747">
+          +7 (999) 747-47-47
         </a>
 
         <button
@@ -84,8 +84,8 @@ export function SiteHeader() {
             </li>
           ))}
           <li>
-            <a className="mobile-phone" href="tel:+74950000000">
-              +7 (495) 000-00-00
+            <a className="mobile-phone" href="tel:+79997474747">
+              +7 (999) 747-47-47
             </a>
           </li>
         </ul>

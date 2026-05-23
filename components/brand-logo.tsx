@@ -8,12 +8,12 @@ type BrandLogoProps = {
 };
 
 /**
- * Знак бренда «Новиков и партнёры» — корпоративная монограмма «Н»
- * в тонкой золотой рамке с серифной типографикой и нижней риской-клеймом.
- * Минимализм в духе buy-side консалтинга (Bain / McKinsey / BCG).
+ * Знак «Контур согласований» — корпоративная печать: двойной круг,
+ * серифная «К» в центре и декоративные риски сверху/снизу.
+ * Архетип официального документооборота: статус и доверие.
  */
 export function BrandMark({
-  size = 40,
+  size = 44,
   className
 }: {
   size?: number;
@@ -23,41 +23,51 @@ export function BrandMark({
     <svg
       width={size}
       height={size}
-      viewBox="0 0 40 40"
+      viewBox="0 0 44 44"
       className={className}
       aria-hidden
       role="img"
       fill="none"
     >
-      <rect
-        x={2.5}
-        y={2.5}
-        width={35}
-        height={35}
-        rx={2}
+      <circle
+        cx={22}
+        cy={22}
+        r={20}
         stroke="var(--gold)"
-        strokeWidth={1.2}
+        strokeWidth={1.3}
+      />
+      <circle
+        cx={22}
+        cy={22}
+        r={16}
+        stroke="var(--gold)"
+        strokeWidth={0.7}
+        opacity={0.55}
       />
       <text
-        x={20}
-        y={27.5}
+        x={22}
+        y={29.2}
         textAnchor="middle"
         fontFamily='Georgia, "Times New Roman", serif'
-        fontSize={22}
+        fontSize={20}
         fontWeight={700}
         fill="var(--navy-deep)"
         letterSpacing="0.01em"
       >
-        Н
+        К
       </text>
       <line
-        x1={14}
-        y1={32}
-        x2={26}
-        y2={32}
+        x1={16}
+        y1={32.5}
+        x2={28}
+        y2={32.5}
         stroke="var(--gold)"
-        strokeWidth={1}
+        strokeWidth={0.9}
       />
+      <circle cx={22} cy={5.5} r={0.9} fill="var(--gold)" />
+      <circle cx={22} cy={38.5} r={0.9} fill="var(--gold)" />
+      <circle cx={5.5} cy={22} r={0.9} fill="var(--gold)" />
+      <circle cx={38.5} cy={22} r={0.9} fill="var(--gold)" />
     </svg>
   );
 }
@@ -65,16 +75,16 @@ export function BrandMark({
 export function BrandLogo({
   linkToHome = true,
   className,
-  tagline = "Консалтинг по инженерной инфраструктуре",
-  markSize = 40
+  tagline = "Согласования в строительстве, ЖКХ и инфраструктуре",
+  markSize = 44
 }: BrandLogoProps) {
   const inner = (
     <>
       <BrandMark size={markSize} className="ik-logo-mark" />
       <div className="ik-logo-copy">
         <strong className="ik-logo-title">
-          <span className="ik-logo-title-main">Новиков</span>
-          <span className="ik-logo-title-accent">и партнёры</span>
+          <span className="ik-logo-title-main">Контур</span>
+          <span className="ik-logo-title-accent">согласований</span>
         </strong>
         {tagline ? <span className="ik-logo-tagline">{tagline}</span> : null}
       </div>

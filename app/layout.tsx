@@ -4,15 +4,15 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 const SITE_URL = "https://trastenergy-site.vercel.app";
-const SITE_NAME = "Новиков и партнёры";
+const SITE_NAME = "Контур согласований";
 const LEGAL_NAME = "ООО «Инфраструктурный контур»";
 const SITE_DESCRIPTION =
-  "Независимый консалтинг по инженерной инфраструктуре: аудит, технологическое присоединение и сопровождение согласований по воде, стокам, газу, теплу и электроснабжению в Москве и Московской области. На стороне заказчика — с личным участием партнёра.";
+  "Контур согласований — консалтинговая практика по согласованиям в строительстве, ЖКХ и инженерной инфраструктуре. Технологическое присоединение, нормативно-правовая экспертиза, сопровождение в государственных органах и работа с ресурсоснабжающими организациями. Москва и Московская область.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
+    default: `${SITE_NAME} — согласования в строительстве, ЖКХ и инфраструктуре`,
     template: `%s — ${SITE_NAME}`
   },
   description: SITE_DESCRIPTION,
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
+    title: `${SITE_NAME} — согласования в строительстве, ЖКХ и инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — независимый консалтинг по инженерной инфраструктуре`,
+    title: `${SITE_NAME} — согласования в строительстве, ЖКХ и инфраструктуре`,
     description: SITE_DESCRIPTION
   },
   robots: {
@@ -50,7 +50,8 @@ const orgJsonLd = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+7-495-000-00-00",
+      telephone: "+7-999-747-47-47",
+      email: "olegnovikov.gov@yandex.ru",
       contactType: "sales",
       areaServed: "RU",
       availableLanguage: ["Russian"]
