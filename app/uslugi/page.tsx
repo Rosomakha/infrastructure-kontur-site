@@ -17,11 +17,12 @@ const OTHER_SLUGS = [
 export const metadata = {
   title: "Услуги — Контур согласований",
   description:
-    "Технологическое присоединение, проектирование, ЖКХ: договоры с РСО, ОДПУ и ИПУ, модернизация ИТП, энергоаудит. Чек-листы документов для расчёта стоимости."
+    "Технологическое присоединение, проектирование, ЖКХ, заявки на федеральную поддержку (ФРТ). Чек-листы документов для расчёта стоимости."
 };
 
 export default function ServicesPage() {
   const hub = getServiceBySlug("tehprisoedinenie")!;
+  const federalSupport = getServiceBySlug("podderzhka-federalnogo-byudzheta")!;
   const techDirections = tehprisoedinenieOnlyDirectionSlugs.map((slug) => {
     const s = getServiceBySlug(slug)!;
     const card = tehprisoedinenieCardLinks.find((c) => c.slug === slug);
@@ -105,6 +106,30 @@ export default function ServicesPage() {
             </article>
           ))}
         </div>
+
+        <h2 className="uslugi-h2 uslugi-h2-spaced">Государственная поддержка и GR</h2>
+        <p className="muted section-blurb">
+          Подготовка и сопровождение заявок органов власти субъектов РФ и
+          муниципалитетов на финансирование из федерального бюджета — Фонд
+          развития территорий (ФРТ), комплексное развитие территорий и смежные
+          программы.
+        </p>
+        <article className="card uslugi-hub">
+          <h3 className="card-title">{federalSupport.title}</h3>
+          <p className="card-lead">{federalSupport.shortLead}</p>
+          <p className="muted small-margin">
+            Документы: {federalSupport.docGroups.length}{" "}
+            {pluralGroup(federalSupport.docGroups.length)}
+          </p>
+          <div className="card-actions">
+            <Link
+              className="btn btn-primary btn-block"
+              href={`/uslugi/${federalSupport.slug}`}
+            >
+              Подробно и чек-лист
+            </Link>
+          </div>
+        </article>
 
         <h2 className="uslugi-h2 uslugi-h2-spaced">Прочие услуги</h2>
         <div className="cards-2">
