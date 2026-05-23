@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FederalSupportSection } from "@/components/federal-support-section";
 import { TehprisSavingsSection } from "@/components/tehpris-savings-section";
 import {
   getServiceBySlug,
@@ -64,6 +65,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const showHubGrid = s.isTehprisoedinenieHub === true;
   const tehprisResource = getTehprisResource(slug);
   const showTehprisSavings = tehprisResource !== undefined;
+  const showFederalSupport = slug === "podderzhka-federalnogo-byudzheta";
 
   return (
     <section className="section">
@@ -114,6 +116,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             compact={isDirection}
           />
         )}
+
+        {showFederalSupport && <FederalSupportSection />}
 
         {(s.algorithmSteps?.length ?? 0) > 0 && (
           <div className="service-flow">
@@ -193,7 +197,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="doc-cta">
           <p>
             Пришлите данные в свободной форме на{" "}
-            <a href="mailto:info@trustenergy.ru">info@trustenergy.ru</a> или
+            <a href="mailto:olegnovikov.gov@yandex.ru">olegnovikov.gov@yandex.ru</a> или
             оставьте заявку — подготовим бриф и уточним список под вашу
             ситуацию.
           </p>

@@ -2055,3 +2055,124 @@ h3 {
   line-height: 1.55;
 }
 
+/* Federal support program catalog */
+.federal-support-catalog {
+  margin: 2rem 0 2.5rem;
+}
+
+.federal-support-disclaimer {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+}
+
+.federal-brief-list {
+  margin-bottom: 2rem;
+}
+
+.federal-category {
+  margin: 2rem 0 1.5rem;
+}
+
+.federal-category h3 {
+  margin-bottom: 0.35rem;
+}
+
+.federal-program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.federal-program {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.federal-program summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  list-style: none;
+}
+
+.federal-program summary::-webkit-details-marker {
+  display: none;
+}
+
+.federal-program summary::after {
+  content: "+";
+  float: right;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.federal-program[open] summary::after {
+  content: "−";
+}
+
+.federal-program-body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.federal-program-meta {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.federal-program-meta dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.federal-program-meta dd {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.federal-program-body h4 {
+  margin: 1.1rem 0 0.45rem;
+  font-size: 0.95rem;
+}
+
+.federal-npa-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.federal-npa-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.45;
+}
+
+.federal-npa-note {
+  display: inline;
+}
+
+.federal-status-note {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(201, 162, 39, 0.08);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 720px) {
+  .federal-program-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .federal-program-meta div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+

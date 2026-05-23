@@ -46,6 +46,10 @@ export default function LegalBasePage() {
             экология и ОВОС
           </a>
           {" · "}
+          <a className="text-link" href="#federalnaya-podderzhka">
+            федеральная поддержка
+          </a>
+          {" · "}
           региональные базы:{" "}
           <a className="text-link" href="#moskva-zakonodatelstvo">
             Москва
@@ -67,6 +71,18 @@ export default function LegalBasePage() {
                     {" "}
                     <Link href="/uslugi/ekologiya-i-ovos" className="text-link">
                       Услуга: экология, ОВОС и ГЭЭ
+                    </Link>
+                    .
+                  </>
+                )}
+                {sec.id === "federalnaya-podderzhka" && (
+                  <>
+                    {" "}
+                    <Link
+                      href="/uslugi/podderzhka-federalnogo-byudzheta"
+                      className="text-link"
+                    >
+                      Каталог программ и чек-лист
                     </Link>
                     .
                   </>
