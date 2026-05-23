@@ -9,7 +9,7 @@ type BrandLogoProps = {
 
 /**
  * Знак «Контур согласований» — корпоративная печать: двойной круг,
- * серифная «К» в центре и декоративные риски сверху/снизу.
+ * серифная монограмма «КС» в центре и декоративные риски сверху/снизу.
  * Архетип официального документооборота: статус и доверие.
  */
 export function BrandMark({
@@ -46,21 +46,21 @@ export function BrandMark({
       />
       <text
         x={22}
-        y={29.2}
+        y={28.6}
         textAnchor="middle"
         fontFamily='Georgia, "Times New Roman", serif'
-        fontSize={20}
+        fontSize={16}
         fontWeight={700}
         fill="var(--navy-deep)"
-        letterSpacing="0.01em"
+        letterSpacing="0.02em"
       >
-        К
+        КС
       </text>
       <line
-        x1={16}
-        y1={32.5}
-        x2={28}
-        y2={32.5}
+        x1={13.5}
+        y1={32}
+        x2={30.5}
+        y2={32}
         stroke="var(--gold)"
         strokeWidth={0.9}
       />
