@@ -40,15 +40,20 @@ export default function LegalBasePage() {
           , ТУ и локальные нормы Москвы/МО.
         </p>
 
-        <div className="info-strip npa-proposal-promo">
-          <p>
-            <strong>Есть предложение по доработке НПА в ЖКХ?</strong>{" "}
-            Направьте его в отдельном разделе — в перспективе предложения
-            будут анализироваться с помощью ИИ, достойные инициативы практика
-            готова продвигать на федеральном уровне.{" "}
-            <Link href="/predlozheniya-npa-zhkh">Предложения по НПА →</Link>
+        <aside className="npa-proposal-promo card">
+          <p className="npa-proposal-promo-eyebrow">Нормотворчество</p>
+          <h2 className="npa-proposal-promo-title">
+            Предложения по доработке НПА в сфере ЖКХ
+          </h2>
+          <p className="muted small-margin">
+            Если видите пробел или избыточное бремя в норме — опишите проблему и
+            предложите формулировку. В перспективе — анализ с помощью ИИ;
+            достойные инициативы готовы продвигать на федеральном уровне.
           </p>
-        </div>
+          <Link className="btn btn-primary" href="/predlozheniya-npa-zhkh">
+            Направить предложение
+          </Link>
+        </aside>
 
         <p className="legal-quick-nav muted">
           Федеральная база:{" "}

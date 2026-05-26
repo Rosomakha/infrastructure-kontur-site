@@ -2368,7 +2368,28 @@ h3 {
 }
 
 .npa-proposal-promo {
-  margin: 1.25rem 0 1.75rem;
+  margin: 1.75rem 0 2rem;
+  padding: 1.35rem 1.5rem;
+  max-width: 52rem;
+}
+
+.npa-proposal-promo-eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.npa-proposal-promo-title {
+  margin: 0.35rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.npa-proposal-promo .btn-primary {
+  margin-top: 1rem;
 }
 
 .npa-form-title {

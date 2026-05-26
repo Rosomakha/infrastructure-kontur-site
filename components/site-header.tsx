@@ -10,7 +10,6 @@ const navItems = [
   { href: "/organy-vlasti", label: "Органам власти" },
   { href: "/kalkulyatory", label: "Калькуляторы" },
   { href: "/normativnaya-baza", label: "Нормативы" },
-  { href: "/predlozheniya-npa-zhkh", label: "НПА: предложения" },
   { href: "/otrasli", label: "Отрасли" },
   { href: "/o-kompanii", label: "О\u00A0компании" },
   { href: "/kontakty", label: "Контакты" }
