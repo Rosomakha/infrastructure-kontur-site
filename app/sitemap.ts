@@ -8,8 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/uslugi",
+    "/organy-vlasti",
     "/kalkulyatory",
     "/normativnaya-baza",
+    "/predlozheniya-npa-zhkh",
     "/otrasli",
     "/o-kompanii",
     "/kontakty"

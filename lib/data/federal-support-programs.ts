@@ -21,6 +21,8 @@ export type FederalSupportCategory = {
   id: string;
   title: string;
   intro: string;
+  /** Что входит в консалтинг по направлению (раздел для органов власти) */
+  consultingIntro: string;
   programs: FederalSupportProgram[];
 };
 
@@ -51,6 +53,8 @@ export const federalSupportCategories: FederalSupportCategory[] = [
     title: "Территориальное и инфраструктурное развитие",
     intro:
       "Комплексное обновление опорных населённых пунктов, бюджетные кредиты на инфраструктуру, КРТ, моногорода, Дальний Восток и сельские территории.",
+    consultingIntro:
+      "Аудит применимости мер, подготовка мастер-планов и заявок в ФРТ, сопровождение КРТ и бюджетных кредитов на инфраструктуру, проекты постановлений субъекта и муниципалитета.",
     programs: [
       {
         id: "fp-infrastruktura-np",
@@ -244,6 +248,8 @@ export const federalSupportCategories: FederalSupportCategory[] = [
     title: "Жильё и расселение",
     intro:
       "Переселение из аварийного жилья, меры ДОМ.РФ, молодые семьи, арендное жильё в ДФО, сейсмоусиление, незавершённое строительство.",
+    consultingIntro:
+      "Региональная адресная программа, заявки на федеральное софинансирование, согласование с ФКР и ФРТ, правовое сопровождение расселения и мер ДОМ.РФ.",
     programs: [
       {
         id: "pereselenie-avariynoe",
@@ -390,6 +396,8 @@ export const federalSupportCategories: FederalSupportCategory[] = [
     title: "ЖКХ и коммунальная инфраструктура",
     intro:
       "Модернизация коммунальной инфраструктуры (МКИ), капремонт МКД, газификация, меры ФКР по энергоэффективности.",
+    consultingIntro:
+      "Комплексные планы МКИ в АИС ФРТ, заявки на финансовую поддержку ФРТ, капремонт и газификация, взаимодействие с РСО и профильными министерствами региона.",
     programs: [
       {
         id: "mki",
@@ -506,6 +514,8 @@ export const federalSupportCategories: FederalSupportCategory[] = [
     id: "urban",
     title: "Городская среда и общественные пространства",
     intro: "ФКГС, рейтинговое голосование, городские парки.",
+    consultingIntro:
+      "Муниципальные программы формирования городской среды, подготовка к рейтинговому голосованию, сметы и заявки на федеральное и региональное софинансирование благоустройства.",
     programs: [
       {
         id: "fkgs",
@@ -557,6 +567,8 @@ export const federalSupportCategories: FederalSupportCategory[] = [
     title: "Дороги, энергоэффективность и иные меры",
     intro:
       "Региональная и местная дорожная сеть, индивидуальные программы развития субъектов, сквозные нормы энергоэффективности.",
+    consultingIntro:
+      "Включение объектов в региональные программы, заявки на субсидии и индивидуальные программы развития субъектов, энергоэффективные меры в составе МКИ и капремонта.",
     programs: [
       {
         id: "dorogi",
@@ -690,3 +702,19 @@ export const federalSupportLegalItems: FederalSupportNpa[] = [
     href: "https://pravo.gov.ru"
   }
 ];
+
+/** Сводка по каталогу программ (раздел для органов власти) */
+export function getFederalSupportCatalogSummary() {
+  const categories = federalSupportCategories.map((cat) => ({
+    id: cat.id,
+    title: cat.title,
+    programCount: cat.programs.length,
+    programs: cat.programs.map((p) => ({ id: p.id, name: p.name }))
+  }));
+  const programCount = categories.reduce((n, c) => n + c.programCount, 0);
+  return {
+    categoryCount: categories.length,
+    programCount,
+    categories
+  };
+}

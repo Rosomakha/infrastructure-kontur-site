@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FederalSupportSection } from "@/components/federal-support-section";
+import { OgvServiceNotice } from "@/components/ogv-service-notice";
 import { TehprisSavingsSection } from "@/components/tehpris-savings-section";
 import { getLegalSectionsByIds } from "@/lib/data/legal-base";
 import {
@@ -87,6 +88,16 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
         <h1>{s.title}</h1>
         <p className="lead">{s.shortLead}</p>
+
+        {showFederalSupport && (
+          <>
+            <OgvServiceNotice />
+            <p className="muted">
+              Полный каталог программ и консалтинга — в разделе{" "}
+              <Link href="/organy-vlasti">«Органам власти»</Link>.
+            </p>
+          </>
+        )}
 
         {showHubGrid && (
           <div className="tehpris-directions">

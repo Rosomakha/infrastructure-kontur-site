@@ -27,10 +27,16 @@ export function SiteFooter() {
               <a href="/uslugi">Услуги и чек-листы документов</a>
             </li>
             <li>
+              <a href="/organy-vlasti">Органам власти — программы и консалтинг</a>
+            </li>
+            <li>
               <a href="/kalkulyatory">Калькуляторы сетей</a>
             </li>
             <li>
               <a href="/normativnaya-baza">Нормативно-правовая база</a>
+            </li>
+            <li>
+              <a href="/predlozheniya-npa-zhkh">Предложения по доработке НПА (ЖКХ)</a>
             </li>
             <li>
               <a href="/uslugi/dogovory-rso">Договоры с РСО</a>

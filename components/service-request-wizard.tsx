@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
+import { OgvServiceNotice } from "@/components/ogv-service-notice";
 import {
   buildRequestEmailBody,
   getAllFederalPrograms,
@@ -199,11 +200,16 @@ export function ServiceRequestWizard({ initialServiceSlug }: Props) {
             </select>
           </label>
           {service && (
-            <p className="muted small-margin">
-              <Link href={`/uslugi/${service.slug}#chek-list`}>
-                Открыть полный чек-лист на странице услуги
-              </Link>
-            </p>
+            <>
+              {service.slug === "podderzhka-federalnogo-byudzheta" && (
+                <OgvServiceNotice />
+              )}
+              <p className="muted small-margin">
+                <Link href={`/uslugi/${service.slug}#chek-list`}>
+                  Открыть полный чек-лист на странице услуги
+                </Link>
+              </p>
+            </>
           )}
           <button
             type="button"
@@ -225,20 +231,23 @@ export function ServiceRequestWizard({ initialServiceSlug }: Props) {
           </p>
 
           {service.slug === "podderzhka-federalnogo-byudzheta" && (
-            <label>
-              Федеральная программа (дополнит чек-лист)
-              <select
-                value={federalProgramId}
-                onChange={(e) => handleFederalProgramChange(e.target.value)}
-              >
-                <option value="">— общий чек-лист услуги —</option>
-                {federalPrograms.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <>
+              <OgvServiceNotice />
+              <label>
+                Федеральная программа (дополнит чек-лист)
+                <select
+                  value={federalProgramId}
+                  onChange={(e) => handleFederalProgramChange(e.target.value)}
+                >
+                  <option value="">— общий чек-лист услуги —</option>
+                  {federalPrograms.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </>
           )}
 
           <div className="request-checklist">

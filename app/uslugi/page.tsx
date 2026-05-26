@@ -5,6 +5,8 @@ import {
   tehprisoedinenieCardLinks,
   zhkhServiceSlugs
 } from "@/lib/data/services";
+import { OgvServiceNotice } from "@/components/ogv-service-notice";
+import { getFederalSupportCatalogSummary } from "@/lib/data/federal-support-programs";
 
 const OTHER_SLUGS = [
   "proektirovanie-inzhiniring",
@@ -23,6 +25,7 @@ export const metadata = {
 export default function ServicesPage() {
   const hub = getServiceBySlug("tehprisoedinenie")!;
   const federalSupport = getServiceBySlug("podderzhka-federalnogo-byudzheta")!;
+  const { programCount } = getFederalSupportCatalogSummary();
   const techDirections = tehprisoedinenieOnlyDirectionSlugs.map((slug) => {
     const s = getServiceBySlug(slug)!;
     const card = tehprisoedinenieCardLinks.find((c) => c.slug === slug);
@@ -114,10 +117,12 @@ export default function ServicesPage() {
         </div>
 
         <h2 className="uslugi-h2 uslugi-h2-spaced">Государственная поддержка и GR</h2>
+        <OgvServiceNotice />
         <p className="muted section-blurb">
-          Каталог федеральных программ (ФРТ, МКИ, КРТ, ФКГС, переселение,
-          газификация и др.) с НПА и индивидуальными чек-листами по каждой программе для первичного
-          брифа — на странице услуги.
+          Полный каталог из {programCount} федеральных программ и консалтинга для
+          органов власти — в отдельном разделе{" "}
+          <Link href="/organy-vlasti">«Органам власти»</Link>. На странице услуги
+          ниже — общий чек-лист; в каталоге — по каждой программе.
         </p>
         <article className="card uslugi-hub">
           <h3 className="card-title">{federalSupport.title}</h3>
@@ -127,8 +132,11 @@ export default function ServicesPage() {
             {pluralGroup(federalSupport.docGroups.length)}
           </p>
           <div className="card-actions card-actions-split">
+            <Link className="btn btn-primary btn-block" href="/organy-vlasti">
+              Каталог программ
+            </Link>
             <Link
-              className="btn btn-primary btn-block"
+              className="btn btn-secondary btn-block"
               href={`/uslugi/${federalSupport.slug}`}
             >
               Подробно и чек-лист
