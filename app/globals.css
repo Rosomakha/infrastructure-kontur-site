@@ -741,6 +741,114 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+.legal-list-item {
+  margin-bottom: 1.1rem;
+}
+
+.legal-list-title {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.legal-list-title:hover {
+  text-decoration: underline;
+}
+
+.legal-list-note {
+  display: inline;
+}
+
+.legal-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+}
+
+.legal-chip {
+  white-space: nowrap;
+}
+
+.legal-drafts-block {
+  margin: 2rem 0 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.legal-sync-meta {
+  font-size: 0.9rem;
+}
+
+.legal-drafts-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+}
+
+.legal-drafts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.legal-drafts-table th,
+.legal-drafts-table td {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.75rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.legal-drafts-table th {
+  background: var(--surface);
+  font-weight: 600;
+}
+
+.legal-draft-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.legal-draft-summary {
+  margin-top: 0.35rem;
+  line-height: 1.45;
+}
+
+.legal-draft-links {
+  white-space: nowrap;
+}
+
+.legal-status {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.legal-status--adopted,
+.legal-status--pending {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.legal-status--progress,
+.legal-status--expertise {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.legal-status--discussion {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.legal-status--monitor {
+  background: #f3f4f6;
+  color: #374151;
+}
+
 .legal-quick-nav {
   margin: 0.5rem 0 1.25rem;
 }

@@ -1,37 +1,33 @@
 import { legalSections } from "@/lib/data/legal-base";
+import { LegalDraftsSection } from "@/components/legal-drafts-section";
+import { LegalItemLinks } from "@/components/legal-item-links";
+import { syncLegalDrafts } from "@/lib/legal/sync-legal";
 import { ExternalLink } from "@/components/external-link";
 import Link from "next/link";
 
 export const metadata = {
   title: "Нормативно-правовая база — Контур согласований",
   description:
-    "Федеральные акты по экологии и ОВОС, электроэнергетике, воде, строительству; законы Москвы и Московской области. Ориентир, не юридическая консультация."
+    "Федеральные акты по ЖКХ, строительству и инженерии со ссылками на актуальные редакции. Проекты НПА и законопроекты с автоматическим обновлением статусов."
 };
 
-export default function LegalBasePage() {
+/** ISR: обновление ссылок на редакции и статусов проектов НПА */
+export const revalidate = 43_200;
+
+export default async function LegalBasePage() {
+  const legalSync = await syncLegalDrafts();
+
   return (
     <section className="section">
       <div className="container prose-wide">
         <p className="eyebrow">Справочно</p>
         <h1>Нормативно-правовая база</h1>
         <p className="lead">
-          Ниже — сжатый ориентир по актам, которые чаще всего встречаются в
-          проектах по технологическому присоединению, сетям, строительству,
-          экологии и переустройству.{" "}
-          <strong>Это не юридическая консультация.</strong> Актуальные редакции
-          проверяйте на{" "}
-          <ExternalLink href="https://pravo.gov.ru" className="text-link">
-            pravo.gov.ru
-          </ExternalLink>
-          , в{" "}
-          <ExternalLink href="https://www.garant.ru" className="text-link">
-            Гаранте
-          </ExternalLink>{" "}
-          /{" "}
-          <ExternalLink href="https://www.consultant.ru" className="text-link">
-            КонсультантПлюс
-          </ExternalLink>{" "}
-          и в официальных письмах РСО.
+          Перечень актов со ссылками на{" "}
+          <strong>актуальные редакции</strong> (КонсультантПлюс) и{" "}
+          <strong>официальное опубликование</strong> (publication.pravo.gov.ru).
+          Список проектов НПА и законопроектов по ЖКХ обновляется автоматически.{" "}
+          <strong>Это не юридическая консультация.</strong>
         </p>
 
         <p className="muted">
@@ -55,7 +51,13 @@ export default function LegalBasePage() {
           </Link>
         </aside>
 
+        <LegalDraftsSection sync={legalSync} />
+
         <p className="legal-quick-nav muted">
+          <a className="text-link" href="#proekty-npa">
+            Проекты НПА
+          </a>
+          {" · "}
           Федеральная база:{" "}
           <a className="text-link" href="#ekologiya-ovos">
             экология и ОВОС
@@ -73,6 +75,22 @@ export default function LegalBasePage() {
           <a className="text-link" href="#mo-zakonodatelstvo">
             Московская область
           </a>
+        </p>
+
+        <p className="muted small-margin">
+          У каждого акта — ссылка «Актуальная редакция» (поддерживается правовой
+          системой{" "}
+          <ExternalLink href="https://www.consultant.ru" className="text-link">
+            КонсультантПлюс
+          </ExternalLink>
+          ) и поиск на{" "}
+          <ExternalLink
+            href="http://publication.pravo.gov.ru"
+            className="text-link"
+          >
+            publication.pravo.gov.ru
+          </ExternalLink>
+          .
         </p>
 
         {legalSections.map((sec) => (
@@ -94,10 +112,10 @@ export default function LegalBasePage() {
                   <>
                     {" "}
                     <Link
-                      href="/uslugi/podderzhka-federalnogo-byudzheta"
+                      href="/organy-vlasti"
                       className="text-link"
                     >
-                      Каталог программ и чек-лист
+                      Каталог программ для органов власти
                     </Link>
                     .
                   </>
@@ -106,18 +124,7 @@ export default function LegalBasePage() {
             )}
             <ol className="legal-list">
               {sec.items.map((item) => (
-                <li key={item.title}>
-                  {item.title}
-                  {item.note && <span className="muted"> — {item.note}</span>}
-                  {item.href && (
-                    <>
-                      {" "}
-                      <ExternalLink href={item.href} className="text-link">
-                        Источник
-                      </ExternalLink>
-                    </>
-                  )}
-                </li>
+                <LegalItemLinks key={item.title} item={item} />
               ))}
             </ol>
           </div>
