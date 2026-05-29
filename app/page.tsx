@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ExperiencePartners } from "@/components/experience-partners";
 import { HomeSegments } from "@/components/home-segments";
 import { SITE_MOTTO } from "@/lib/site";
 
@@ -143,8 +142,6 @@ export default function HomePage() {
           </aside>
         </div>
       </section>
-
-      <ExperiencePartners variant="strip" />
 
       <HomeSegments />
 
