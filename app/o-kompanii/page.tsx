@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ExperiencePartners } from "@/components/experience-partners";
 import { OgvServiceNotice } from "@/components/ogv-service-notice";
 import { SITE_MOTTO } from "@/lib/site";
 
@@ -66,6 +67,8 @@ export default function AboutPage() {
           <li>Почётная грамота Министерства регионального развития Российской Федерации</li>
           <li>Благодарности депутатов Государственной Думы Федерального Собрания Российской Федерации (2025, 2026)</li>
         </ul>
+
+        <ExperiencePartners variant="section" />
 
         <h2>Корпоративный опыт</h2>
         <ul>

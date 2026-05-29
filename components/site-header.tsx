@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
+import { KALKULATORY_NAV_LABEL } from "@/lib/site";
 
 const navItems = [
   { href: "/uslugi", label: "Услуги" },
   { href: "/organy-vlasti", label: "Органам власти" },
-  { href: "/kalkulyatory", label: "Калькуляторы" },
+  { href: "/kalkulyatory", label: KALKULATORY_NAV_LABEL },
   { href: "/normativnaya-baza", label: "Нормативы" },
   { href: "/otrasli", label: "Отрасли" },
   { href: "/o-kompanii", label: "О\u00A0компании" },

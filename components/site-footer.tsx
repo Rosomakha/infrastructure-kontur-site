@@ -1,4 +1,4 @@
-import { SITE_MOTTO, SITE_TAGLINE } from "@/lib/site";
+import { KALKULATORY_NAV_LABEL, SITE_MOTTO, SITE_TAGLINE } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -30,7 +30,7 @@ export function SiteFooter() {
               <a href="/organy-vlasti">Органам власти — программы и консалтинг</a>
             </li>
             <li>
-              <a href="/kalkulyatory">Калькуляторы сетей</a>
+              <a href="/kalkulyatory">{KALKULATORY_NAV_LABEL}</a>
             </li>
             <li>
               <a href="/normativnaya-baza">Нормативно-правовая база</a>

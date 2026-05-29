@@ -116,7 +116,7 @@ const rawServices: ServiceDetail[] = [
     ],
     helpfulLinks: [
       { label: "Как сэкономить на плате за техприс", href: "/uslugi/tehprisoedinenie#tehpris-economy" },
-      { label: "Калькуляторы и публичные инструменты", href: "/kalkulyatory" },
+      { label: "Тарифы и калькуляторы РСО", href: "/kalkulyatory" },
       { label: "Нормативно-правовая база", href: "/normativnaya-baza" }
     ],
     algorithmSteps: [
@@ -189,7 +189,7 @@ const rawServices: ServiceDetail[] = [
     ],
     helpfulLinks: [
       { label: "Обзор: технологическое присоединение (все сети)", href: "/uslugi/tehprisoedinenie" },
-      { label: "Калькуляторы: электрика (сайты РСО)", href: "/kalkulyatory" }
+      { label: "Тарифы РСО: электрика", href: "/kalkulyatory" }
     ],
     algorithmSteps: [
       "Определение сетевой организации по адресу и технической возможности (ПАО «МОЭСК», АО «ОЭК», иные ВЛ/КЛ в зоне; для трасс выше — ФСК ЕЭС и др. по ситуации).",
@@ -261,7 +261,7 @@ const rawServices: ServiceDetail[] = [
     ],
     helpfulLinks: [
       { label: "Обзор: технологическое присоединение", href: "/uslugi/tehprisoedinenie" },
-      { label: "Калькуляторы: вода, стоки", href: "/kalkulyatory" }
+      { label: "Тарифы РСО: вода, стоки", href: "/kalkulyatory" }
     ],
     algorithmSteps: [
       "Определение оператора водоснабжения и водоотведения по адресу (Москва — ГУП «Мосводоканал»; МО — региональный оператор по зоне и др.).",
@@ -331,7 +331,7 @@ const rawServices: ServiceDetail[] = [
     ],
     helpfulLinks: [
       { label: "Обзор: технологическое присоединение", href: "/uslugi/tehprisoedinenie" },
-      { label: "Калькуляторы: теплосети, МОЭК и др.", href: "/kalkulyatory" }
+      { label: "Тарифы РСО: теплосети, МОЭК", href: "/kalkulyatory" }
     ],
     algorithmSteps: [
       "Определение ресурсоснабжающей / сетевой организации по зоне (Москва: ПАО «МОЭК» и др.; МО: Т Плюс и другие СРТ по муниципалитету — по данным поставщика).",
@@ -406,7 +406,7 @@ const rawServices: ServiceDetail[] = [
     ],
     helpfulLinks: [
       { label: "Обзор: технологическое присоединение", href: "/uslugi/tehprisoedinenie" },
-      { label: "Калькуляторы: газораспределение", href: "/kalkulyatory" }
+      { label: "Тарифы РСО: газораспределение", href: "/kalkulyatory" }
     ],
     algorithmSteps: [
       "Обращение в газораспределительную организацию (ГРО) по зоне: Москва и МО — соответствующий филиал ПАО «Газпром газораспределение» или иной оператор по месту.",

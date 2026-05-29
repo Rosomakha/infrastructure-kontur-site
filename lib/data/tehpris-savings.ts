@@ -158,7 +158,7 @@ export const tehprisSavingsLegalRefs = [
     href: "/normativnaya-baza#federal"
   },
   {
-    label: "Калькуляторы и инструменты РСО",
+    label: "Тарифы и калькуляторы РСО (каталог ссылок)",
     href: "/kalkulyatory"
   },
   {

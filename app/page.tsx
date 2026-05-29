@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExperiencePartners } from "@/components/experience-partners";
 import { HomeSegments } from "@/components/home-segments";
 import { SITE_MOTTO } from "@/lib/site";
 
@@ -22,13 +23,6 @@ const stats = [
   { value: "10+", label: "лет на государственной службе" },
   { value: "3", label: "федеральных ведомства в опыте" },
   { value: "24\u00A0ч", label: "первый ответ по обращению" }
-];
-
-const credentials = [
-  "Минстрой России",
-  "Минрегион России",
-  "Росстройконтроль",
-  "ГК ПИК-Комфорт"
 ];
 
 const advantages = [
@@ -101,7 +95,7 @@ export default function HomePage() {
             <p className="eyebrow">Контур согласований · Консалтинг</p>
             <h1>
               Согласования в строительстве, ЖКХ и{" "}
-              <span className="hero-accent">инфраструктуре</span>
+              <span className="hero-accent">инженерной инфраструктуре</span>
             </h1>
             <p className="hero-motto">{SITE_MOTTO}</p>
             <p className="lead">
@@ -150,16 +144,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="credentials-strip" aria-label="Опыт руководителя">
-        <div className="container credentials-inner">
-          <span className="credentials-label">Опыт руководителя</span>
-          <ul className="credentials-list">
-            {credentials.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <ExperiencePartners variant="strip" />
 
       <HomeSegments />
 

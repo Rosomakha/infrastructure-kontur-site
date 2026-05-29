@@ -179,8 +179,9 @@ export default function ServicesPage() {
 
         <div className="info-strip">
           <p>
-            <strong>Калькуляторы сетей</strong> (справочно, сайты РСО) —{" "}
-            <Link href="/kalkulyatory">Калькуляторы и инструменты</Link>.{" "}
+            <strong>Тарифы и публичные калькуляторы РСО</strong> (каталог
+            ссылок, не расчёт на нашем сайте) —{" "}
+            <Link href="/kalkulyatory">перейти в каталог</Link>.{" "}
             <Link href="/uslugi/tehprisoedinenie#tehpris-economy">
               Экономия на плате за техприс и льготы
             </Link>

@@ -7,6 +7,11 @@ export const SITE_NAME = "Контур согласований";
 export const SITE_TAGLINE =
   "Согласования в строительстве, ЖКХ и инфраструктуре";
 
+/** Навигация и заголовок страницы каталога ссылок на тарифы РСО */
+export const KALKULATORY_NAV_LABEL = "Тарифы РСО";
+export const KALKULATORY_PAGE_TITLE =
+  "Тарифы и публичные калькуляторы РСО";
+
 /** Девиз организации */
 export const SITE_MOTTO = "Сбережём ваши деньги — сохраним ваши нервы";
 
