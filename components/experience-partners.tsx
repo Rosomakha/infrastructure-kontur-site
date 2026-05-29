@@ -1,8 +1,6 @@
-import Image from "next/image";
 import {
   experiencePartners,
   PARTNER_CATEGORY_LABELS,
-  type ExperiencePartner,
   type PartnerCategory
 } from "@/lib/data/experience-partners";
 
@@ -31,25 +29,6 @@ function PartnerMark({
   );
 }
 
-function PartnerLogo({ partner }: { partner: ExperiencePartner }) {
-  if (partner.logoSrc) {
-    return (
-      <span className="partner-logo-wrap">
-        <Image
-          src={partner.logoSrc}
-          alt={partner.logoAlt ?? partner.name}
-          width={120}
-          height={48}
-          className="partner-logo-img"
-          sizes="(max-width: 640px) 80px, 120px"
-        />
-      </span>
-    );
-  }
-
-  return <PartnerMark mark={partner.mark} accent={partner.accent} />;
-}
-
 type Props = {
   /** Компактный вариант для полосы под hero */
   variant?: "strip" | "section";
@@ -72,15 +51,14 @@ export function ExperiencePartners({ variant = "strip" }: Props) {
           <div className="partners-strip-head">
             <span className="partners-eyebrow">Опыт работы</span>
             <p className="partners-strip-lead muted">
-              Служебный и проектный опыт руководителя практики. Логотипы —
-              с официальных сайтов организаций; товарные знаки принадлежат
-              правообладателям.
+              Служебный и проектный опыт руководителя практики. Маркеры —
+              текстовые, не официальные логотипы правообладателей.
             </p>
           </div>
           <ul className="partners-logo-row">
             {experiencePartners.map((p) => (
               <li key={p.id} className="partner-logo-item">
-                <PartnerLogo partner={p} />
+                <PartnerMark mark={p.mark} accent={p.accent} />
                 <span className="partner-logo-name">{p.name}</span>
               </li>
             ))}
@@ -97,8 +75,8 @@ export function ExperiencePartners({ variant = "strip" }: Props) {
         <h2>Органы власти, РСО и заказчики</h2>
         <p className="lead partners-section-lead">
           Указаны организации, с которыми у руководителя практики был служебный
-          или проектный опыт сопровождения. Логотипы размещены с официальных
-          сайтов; товарные знаки принадлежат правообладателям.
+          или проектный опыт сопровождения. Используются текстовые маркеры для
+          идентификации; товарные знаки принадлежат правообладателям.
         </p>
         {byCategory.map((group) => (
           <div className="partners-group" key={group.cat}>
@@ -106,7 +84,7 @@ export function ExperiencePartners({ variant = "strip" }: Props) {
             <ul className="partners-grid">
               {group.items.map((p) => (
                 <li key={p.id} className="partner-card">
-                  <PartnerLogo partner={p} />
+                  <PartnerMark mark={p.mark} accent={p.accent} />
                   <p className="partner-card-name">{p.name}</p>
                 </li>
               ))}

@@ -2120,7 +2120,7 @@ h3 {
   }
 }
 
-/* === Опыт работы: партнёры (логотипы с официальных сайтов) === */
+/* === Опыт работы: партнёры (текстовые маркеры) === */
 .partners-strip {
   border-top: 1px solid rgba(7, 26, 50, 0.06);
   border-bottom: 1px solid rgba(7, 26, 50, 0.06);
@@ -2169,29 +2169,8 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
-  width: 6.5rem;
-  text-align: center;
-}
-
-.partner-logo-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 5.5rem;
-  height: 3.25rem;
-  padding: 0.35rem 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 1px 0 rgba(7, 26, 50, 0.04);
-}
-
-.partner-logo-img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 2.75rem;
-  object-fit: contain;
+  text-align: center;
 }
 
 .partner-mark {
@@ -2264,16 +2243,6 @@ h3 {
   min-width: 4rem;
   min-height: 4rem;
   font-size: 0.72rem;
-}
-
-.partner-card .partner-logo-wrap {
-  width: 7rem;
-  height: 4rem;
-  padding: 0.5rem 0.65rem;
-}
-
-.partner-card .partner-logo-img {
-  max-height: 3.25rem;
 }
 
 .partner-card-name {

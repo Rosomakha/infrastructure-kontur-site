@@ -4,15 +4,11 @@ export type ExperiencePartner = {
   id: string;
   /** Полное наименование */
   name: string;
-  /** Краткая подпись (fallback, если нет logoSrc) */
+  /** Краткая подпись в «знаке» (текстовый маркер, не официальный логотип) */
   mark: string;
   category: PartnerCategory;
-  /** Цвет акцента маркера (fallback) */
+  /** Цвет акцента маркера */
   accent?: string;
-  /** Локальный путь к логотипу с официального сайта (public/partners) */
-  logoSrc?: string;
-  /** Краткое описание для alt */
-  logoAlt?: string;
 };
 
 export const PARTNER_CATEGORY_LABELS: Record<PartnerCategory, string> = {
@@ -24,7 +20,7 @@ export const PARTNER_CATEGORY_LABELS: Record<PartnerCategory, string> = {
 
 /**
  * Организации, с которыми у руководителя практики был служебный или проектный
- * опыт. Логотипы загружены с официальных сайтов организаций (см. public/partners).
+ * опыт (по резюме и практике). Текстовые маркеры — не официальные логотипы.
  */
 export const experiencePartners: ExperiencePartner[] = [
   {
@@ -32,9 +28,7 @@ export const experiencePartners: ExperiencePartner[] = [
     name: "Министерство строительства и ЖКХ Российской Федерации",
     mark: "Минстрой",
     category: "ogv",
-    accent: "#0b3a6e",
-    logoSrc: "/partners/minstroy.svg",
-    logoAlt: "Логотип Минстроя России"
+    accent: "#0b3a6e"
   },
   {
     id: "minregion",
@@ -48,107 +42,83 @@ export const experiencePartners: ExperiencePartner[] = [
     name: "Федеральное агентство по строительству и ЖКХ (Госстрой)",
     mark: "Госстрой",
     category: "ogv",
-    accent: "#0e7c86",
-    logoSrc: "/partners/gosstroy.svg",
-    logoAlt: "Логотип Госстроя"
+    accent: "#0e7c86"
   },
   {
     id: "dagestan",
     name: "Минстрой, архитектуры и ЖКХ Республики Дагестан",
     mark: "Минстрой РД",
     category: "ogv",
-    accent: "#0e7c86",
-    logoSrc: "/partners/dagestan.png",
-    logoAlt: "Логотип официального портала Республики Дагестан"
+    accent: "#0e7c86"
   },
   {
     id: "rosstroycontrol",
     name: "Росстройконтроль (ФБУ, взаимодействие с Минстроем и Минфином)",
     mark: "РСК",
     category: "ogv",
-    accent: "#4b5563",
-    logoSrc: "/partners/rosstroycontrol.png",
-    logoAlt: "Логотип Росстройконтроля"
+    accent: "#4b5563"
   },
   {
     id: "moesk",
     name: "ПАО «Московская объединённая электросетевая компания» (МОЭСК)",
     mark: "МОЭСК",
     category: "rso",
-    accent: "#2563eb",
-    logoSrc: "/partners/moesk.png",
-    logoAlt: "Логотип МОЭСК"
+    accent: "#2563eb"
   },
   {
     id: "moek",
     name: "ПАО «Московская объединённая энергетическая компания» (МОЭК)",
     mark: "МОЭК",
     category: "rso",
-    accent: "#dc2626",
-    logoSrc: "/partners/moek.png",
-    logoAlt: "Логотип МОЭК"
+    accent: "#dc2626"
   },
   {
     id: "oek",
     name: "АО «Объединённая энергетическая компания» (ОЭК)",
     mark: "ОЭК",
     category: "rso",
-    accent: "#059669",
-    logoSrc: "/partners/oek.jpg",
-    logoAlt: "Логотип ОЭК"
+    accent: "#059669"
   },
   {
     id: "mosvodokanal",
     name: "ГУП «Мосводоканал»",
     mark: "МВК",
     category: "rso",
-    accent: "#0284c7",
-    logoSrc: "/partners/mosvodokanal.png",
-    logoAlt: "Логотип Мосводоканала"
+    accent: "#0284c7"
   },
   {
     id: "fsk",
     name: "ПАО «ФСК ЕЭС»",
     mark: "ФСК",
     category: "rso",
-    accent: "#7c3aed",
-    logoSrc: "/partners/fsk.png",
-    logoAlt: "Логотип ФСК ЕЭС"
+    accent: "#7c3aed"
   },
   {
     id: "gazprom-gd",
     name: "ПАО «Газпром газораспределение» (филиалы, в т.ч. МО)",
     mark: "ГГР",
     category: "rso",
-    accent: "#0369a1",
-    logoSrc: "/partners/gazprom-gd.svg",
-    logoAlt: "Логотип Газпром газораспределение"
+    accent: "#0369a1"
   },
   {
     id: "frt",
     name: "Фонд развития территорий (сопровождение заявок регионов)",
     mark: "ФРТ",
     category: "operator",
-    accent: "#0b3a6e",
-    logoSrc: "/partners/frt.svg",
-    logoAlt: "Логотип Фонда развития территорий"
+    accent: "#0b3a6e"
   },
   {
     id: "pik",
     name: "ГК «ПИК-Комфорт»",
     mark: "ПИК",
     category: "corporate",
-    accent: "#d9961a",
-    logoSrc: "/partners/pik.png",
-    logoAlt: "Логотип ПИК-Комфорт"
+    accent: "#d9961a"
   },
   {
     id: "gazstroyprom",
     name: "«Газстройпром»",
     mark: "ГСП",
     category: "corporate",
-    accent: "#64748b",
-    logoSrc: "/partners/gazstroyprom.svg",
-    logoAlt: "Логотип Газстройпром"
+    accent: "#64748b"
   }
 ];
